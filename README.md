@@ -119,24 +119,6 @@ CREATE TABLE doctors (
 );
 ```
 
-## 🚀 Deployment
-
-### Docker Deployment
-
-```bash
-# Build the image
-docker build -t mindaid .
-
-# Run the container
-docker run -p 8000:8000 --env-file .env mindaid
-```
-
-### Using Docker Compose
-
-```bash
-docker-compose up -d
-```
-
 ## 📁 Project Structure
 
 ```
@@ -150,8 +132,6 @@ MediHacks/
 ├── uv.lock              # Dependency lock file
 ├── run_uv.sh            # Application runner script
 ├── generate_secret.py    # Secret key generator
-├── Dockerfile           # Container configuration
-└── docker-compose.yml   # Multi-container setup
 ```
 
 ## 🔒 Security Features
