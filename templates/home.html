@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="homepage_style1.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/homepage_style.css">
+    <title>HomePage</title>
+</head>
+
+<body>
+    <div class="everything">
+
+        <header>
+            <div class="header">
+                <div class="heading">
+                    <h1 style="font-weight: 500;">MindAid</h1>
+                </div>
+                <div class="links">
+                    <button>
+                        <a href="/logout">Log Out</a>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <hr>
+        <div class="welcome-msg">
+            <h1>Hello, {{username}}</h1>
+
+            {% if diagnosed %}
+                <h2>You are Diagnosed with {{ severity }} {{ disorder }}</h2>
+                <h2>"Would You like to try out Our Services"</h2>
+            {% else %}
+                <h2>Ohh !, You are not Diagnosed Yet !</h2>
+                <h2>Would You like to try out our AI Diagnosis Bot</h2>
+            {% endif %}
+        </div>
+        <div class="cards">
+            <div class="card" id="left-box">
+                <img src="/static/img/bot.avif">
+                <h3>"AI Diagnosis"</h3>
+                    <h4>Get Diagnosed by Our AI Powered Diagnosis Bot</h4>
+                <button>
+                    <a href="/diagnosis">click here</a>
+                </button>
+            </div>
+            <div class="card" id="center-box">
+                <img src="/static/img/Elisa.jpg">
+                <h3>"AI Counselor"</h3>
+                <h4>Get Diagnosed by Our AI Powered Counselor</h4>
+                <button>
+                    <a href="/counsel">click here</a>
+                </button>
+            </div>
+            <div class="card" id="right-box">
+                <img src="/static/img/JamesTaylor.jpg">
+                <h3>"Doctor"</h3>
+                <h4>Consult a Real Doctor</h4><br>
+                <button>
+                    <a href="/doctor">click here</a>
+                </button>
+            </div>
+        </div>
+        <hr style="margin-top: 1em;">
+
+        {% if counseled %}
+        <div class="session-hist">
+            <h2 class="heading">Your Last Session :</h2>
+
+            <div class="session">
+                <h2>{{ date }}</h2>
+                <button>
+                    <a href="/history">see full chat</a>
+                </button>
+            </div>
+        </div>
+        {% else %}
+        <div class="session-hist">
+            <h2 class="heading">Your Last Session :</h2>
+            <h3 class="heading">"You haven't had any Counselling Sessions Yet"</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

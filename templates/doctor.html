@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindaid - Connect with Doctors</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/doctor_style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="header-title">Connect with Doctors</h1>
+        <h4 style="margin-right: 24vw;">This is not completed yet, This will be completed in future versions</h4>
+        <div class="top-right-buttons">
+            <a href="/home" class="button">Home</a>
+            <a href="/logout" class="button">Logout</a>
+        </div>
+    </header>
+    <div class="container">
+
+        <aside class="sidebar">
+            <h2>Filters</h2>
+            <form id="filterForm">
+                <div class="filter-group">
+                    <label for="locationFilter">Location:</label>
+                    <select id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="New York, NY">New York, NY</option>
+                        <option value="Los Angeles, CA">Los Angeles, CA</option>
+                        <option value="Chicago, IL">Chicago, IL</option>
+                        <option value="Houston, TX">Houston, TX</option>
+                        <option value="San Francisco, CA">San Francisco, CA</option>
+                        <option value="Miami, FL">Miami, FL</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="feesFilter">Fees:</label>
+                    <select id="feesFilter">
+                        <option value="">Any Fee</option>
+                        <option value="100">$100 or less</option>
+                        <option value="120">$120 or less</option>
+                        <option value="150">$150 or less</option>
+                    </select>
+                </div>
+                <button type="submit">Apply Filters</button>
+            </form>
+        </aside>
+        <div class="main-content">
+            <div class="card" data-location="New York, NY" data-fees="100">
+                <img src="/static/img/JohnDoe.jpg" alt="Doctor John Doe">
+                <h2>Dr. John Doe</h2>
+                <p><strong>Qualification:</strong> MBBS, MD</p>
+                <p><strong>Meeting Timings:</strong> 10:00 AM - 4:00 PM</p>
+                <p><strong>Location:</strong> New York, NY</p>
+                <p><strong>Fees:</strong> $100 per session</p>
+            </div>
+            <div class="card" data-location="Los Angeles, CA" data-fees="120">
+                <img src="/static/img/JaneSmith.jpg" alt="Doctor Jane Smith">
+                <h2>Dr. Jane Smith</h2>
+                <p><strong>Qualification:</strong> PhD in Clinical Psychology</p>
+                <p><strong>Meeting Timings:</strong> 1:00 PM - 6:00 PM</p>
+                <p><strong>Location:</strong> Los Angeles, CA</p>
+                <p><strong>Fees:</strong> $120 per session</p>
+            </div>
+            <div class="card" data-location="Chicago, IL" data-fees="110">
+                <img src="/static/img/MichaelBrown.jpg" alt="Doctor Michael Brown">
+                <h2>Dr. Michael Brown</h2>
+                <p><strong>Qualification:</strong> MD, Psychiatry</p>
+                <p><strong>Meeting Timings:</strong> 9:00 AM - 3:00 PM</p>
+                <p><strong>Location:</strong> Chicago, IL</p>
+                <p><strong>Fees:</strong> $110 per session</p>
+            </div>
+            <div class="card" data-location="Houston, TX" data-fees="130">
+                <img src="/static/img/EmilyJohnson.jpg" alt="Doctor Emily Johnson">
+                <h2>Dr. Emily Johnson</h2>
+                <p><strong>Qualification:</strong> PhD in Counselling Psychology</p>
+                <p><strong>Meeting Timings:</strong> 12:00 PM - 5:00 PM</p>
+                <p><strong>Location:</strong> Houston, TX</p>
+                <p><strong>Fees:</strong> $130 per session</p>
+            </div>
+            <div class="card" data-location="San Francisco, CA" data-fees="150">
+                <img src="/static/img/DavidLee.jpg" alt="Doctor David Lee">
+                <h2>Dr. David Lee</h2>
+                <p><strong>Qualification:</strong> MD, Neurology</p>
+                <p><strong>Meeting Timings:</strong> 11:00 AM - 4:00 PM</p>
+                <p><strong>Location:</strong> San Francisco, CA</p>
+                <p><strong>Fees:</strong> $150 per session</p>
+            </div>
+            <div class="card" data-location="Miami, FL" data-fees="90">
+                <img src="/static/img/SarahAdams.jpg" alt="Doctor Sarah Adams">
+                <h2>Dr. Sarah Adams</h2>
+                <p><strong>Qualification:</strong> MD, Family Medicine</p>
+                <p><strong>Meeting Timings:</strong> 8:00 AM - 1:00 PM</p>
+                <p><strong>Location:</strong> Miami, FL</p>
+                <p><strong>Fees:</strong> $90 per session</p>
+            </div>
+            <div class="card" data-location="Boston, MA" data-fees="140">
+                <img src="/static/img/Robert.jpg" alt="Doctor Robert Wilson">
+                <h2>Dr. Robert Wilson</h2>
+                <p><strong>Qualification:</strong> MD, Cardiology</p>
+                <p><strong>Meeting Timings:</strong> 9:00 AM - 2:00 PM</p>
+                <p><strong>Location:</strong> Boston, MA</p>
+                <p><strong>Fees:</strong> $140 per session</p>
+            </div>
+            <div class="card" data-location="Dallas, TX" data-fees="110">
+                <img src="/static/img/maria.jpg" alt="Doctor Maria Garcia">
+                <h2>Dr. Maria Garcia</h2>
+                <p><strong>Qualification:</strong> MD, Dermatology</p>
+                <p><strong>Meeting Timings:</strong> 10:00 AM - 3:00 PM</p>
+                <p><strong>Location:</strong> Dallas, TX</p>
+                <p><strong>Fees:</strong> $110 per session</p>
+            </div>
+            <div class="card" data-location="Seattle, WA" data-fees="120">
+                <img src="/static/img/JamesTaylor.jpg" alt="Doctor James Taylor">
+                <h2>Dr. James Taylor</h2>
+                <p><strong>Qualification:</strong> MD, Pediatrics</p>
+                <p><strong>Meeting Timings:</strong> 11:00 AM - 5:00 PM</p>
+                <p><strong>Location:</strong> Seattle, WA</p>
+                <p><strong>Fees:</strong> $120 per session</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('filterForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            applyFilters();
+        });
+
+        function applyFilters() {
+            var locationFilter = document.getElementById('locationFilter').value;
+            var feesFilter = document.getElementById('feesFilter').value;
+
+            var cards = document.querySelectorAll('.card');
+
+            cards.forEach(function (card) {
+                var cardLocation = card.getAttribute('data-location');
+                var cardFees = parseInt(card.getAttribute('data-fees'));
+
+                var showCard = true;
+
+                if (locationFilter && locationFilter !== cardLocation) {
+                    showCard = false;
+                }
+
+                if (feesFilter && feesFilter !== "" && parseInt(feesFilter) < cardFees) {
+                    showCard = false;
+                }
+
+                if (showCard) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

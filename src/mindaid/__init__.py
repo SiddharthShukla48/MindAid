@@ -1,0 +1,1 @@
+# MindAid Application Package

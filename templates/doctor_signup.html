@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Doctor Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b0ba1f3f1d.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Times New Roman";
+
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('/static/img/background.jpeg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+
+        .wrapper {
+            width: 36%;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(9px);
+            color: #fff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            z-index: 2;
+            box-shadow: 1px 1px 2px #464f6f88,
+                -1px -1px 2px #464f6f88;
+        }
+
+        .wrapper h1 {
+            font-size: 2em;
+            text-align: center;
+            z-index: 2;
+
+        }
+
+        .wrapper .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 30px 0;
+            z-index: 2;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, .2);
+            border-radius: 40px;
+            font-size: 1em;
+            color: #fff;
+            padding: 20px 45px 20px 20px;
+            z-index: 2;
+        }
+
+        .input-box input::placeholder {
+            color: #fff;
+            z-index: 2;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 30%;
+            transform: translate(-50%);
+            font-size: 1em;
+            z-index: 2;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .wrapper .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+            z-index: 2;
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+            z-index: 2;
+        }
+
+        .wrapper p {
+            font-size: 12px;
+            text-align: center;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <h1>Doctor Signup</h1>
+        <p style="padding-bottom: 25px;" class="register-link">Already have an account? <a
+                href="/doctor_login">Login</a></p>
+        {% if error %}
+        <h3 style="margin-left: 3.5em;">"Username Already Exists"</h3>
+        {% endif %}
+
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input name="firstn" type="text" id="firstm" required placeholder="Enter your first name">
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-box">
+                        <input name="lastn" type="text" id="lastn" required placeholder="Enter your last name">
+
+                    </div>
+                </div>
+            </div>
+            <div class="input-box">
+                <input name="username" type="text" id="username" required placeholder="Enter your username">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <div class="pass input-box">
+                    <input name="password" type="password" id="password" required placeholder="Enter your password">
+                    <span class="password-toggle-icon" style="padding-left: 5px; padding-top: 15px; font-size: 20px;">
+                        <i class="fa-solid fa-eye-slash"></i></span>
+                </div>
+            </div>
+            <div class="input-box">
+                <input name="qualification" type="qualification" id="qualification" required placeholder="Enter your qualification">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input name="fees" type="fees" id="fees" required placeholder="Enter your fees">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <input type="submit" class="btn" name="submit">
+        </form>
+    </div>
+
+    <script>
+        const passwordField = document.getElementById("password");
+        const togglePassword = document.querySelector(".password-toggle-icon i");
+
+        togglePassword.addEventListener("click", function () {
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                togglePassword.className = "fa-solid fa-eye";
+            } else {
+                passwordField.type = "password";
+                togglePassword.className = "fa-solid fa-eye-slash";
+            }
+        });
+    </script>
+</body>
+
+</html>

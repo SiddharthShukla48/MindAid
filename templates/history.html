@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="trialhistory.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/styles/history.css">
+
+</head>
+
+<body>
+    <div class="chat">
+        <section class="msger">
+            <header class="msger-header">
+                <div class="msger-header-title">
+                    Chat History
+                </div>
+            </header>
+
+            <main class="msger-chat" id="chat-container">
+                <!-- Chat history will be injected here -->
+                <div class="msg left-msg">
+                    <div class="msg-img" style="background-image: url(/static/img/Elisa.jpg)"></div>
+                    
+                    <div class="msg-bubble">
+                      <div class="msg-info">
+                        <div class="msg-info-name">Elisa</div>
+                        <div class="msg-info-time"></div>
+                      </div>
+                      
+                      <div class="msg-text">
+                        Hi {{ username }}, welcome to MindAid diagnosis.
+                        I will ask some questions to diagnose your problem.
+                        Can you describe the feelings that you are currently experiencing ?
+                      </div>
+                    </div>
+                  </div>
+            </main>
+        </section>
+    </div>
+    <div class="header">
+        <button class="btn">
+            <a href="/counsel">Counselor</a>
+        </button>
+        <button class="btn">
+            <a href="/home">Home</a>
+        </button>
+    </div>
+
+    <script>
+        // Input string from Flask
+        const inputString = "{{ input_string }}";
+
+        // Replace HTML entity &#39; with single quote
+        const cleanedString = inputString.replace(/&#39;/g, "'");
+        console.log(cleanedString)
+
+        // Split the input string by '|'
+        const messages = cleanedString.split('|').map(message => message.trim());
+
+        // Get the chat container
+        const chatContainer = document.getElementById('chat-container');
+
+        // Loop through the messages and create div elements alternately for user and AI messages
+        messages.forEach((message, index) => {
+            const messageDiv = document.createElement('div');
+            if (index % 2 === 0) {
+                messageDiv.className = 'msg right-msg';
+                messageDiv.innerHTML = `
+                    <div class="msg-img" style="background-image: url(/static/img/user2.png)"></div>
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name">You</div>
+                            <div class="msg-info-time">${new Date().toLocaleTimeString()}</div>
+                        </div>
+                        <div class="msg-text">${message}</div>
+                    </div>
+                `;
+            } else {
+                messageDiv.className = 'msg left-msg';
+                messageDiv.innerHTML = `
+                    <div class="msg-img" style="background-image: url(/static/img/Elisa.jpg)"></div>
+                    <div class="msg-bubble">
+                        <div class="msg-info">
+                            <div class="msg-info-name"Elisa</div>
+                            <div class="msg-info-time">${new Date().toLocaleTimeString()}</div>
+                        </div>
+                        <div class="msg-text">${message}</div>
+                    </div>
+                `;
+            }
+            chatContainer.appendChild(messageDiv);
+        });
+    </script>
+</body>
+
+</html>

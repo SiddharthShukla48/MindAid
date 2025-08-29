@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/static/img/background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #5c5f5f;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff22;
+}
+
+.header-left h1, .header-left p {
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logout-button {
+    background-color: #00000022;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+hr {
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+main {
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.9); */
+}
+
+.appointments .tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #ffffff22;
+}
+
+.tab-left, .tab-middle {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.tab-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-right button {
+    margin-bottom: 5px;
+}
+
+.chat-button, .cancel-button {
+    background-color: #098f1044;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    background-color: #990c0c44;
+}
